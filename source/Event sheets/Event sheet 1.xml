@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <comment>Defines if fullscreen is active or else.</comment>
+        <variable constant="0" name="fullscreen" sid="170479304595264" static="0" type="number">0</variable>
+        <comment>Defines if user is dragging a file to the window.</comment>
+        <variable constant="0" name="drag" sid="922463620933325" static="0" type="number">0</variable>
+        <comment>On start, sets the window size.</comment>
+        <event-block sid="255112192440988">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="619673162056694" type="System" />
+            </conditions>
+            <actions>
+                <action id="29" name="Set Size" sid="551127881491800" type="Electron">
+                    <param id="0" name="Width">852</param>
+                    <param id="1" name="Height">478</param>
+                    <param id="2" name="Animated">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="118336754248256" title="File reader">
+            <sub-events>
+                <event-group description="" sid="781827011145402" title="Choose file">
+                    <sub-events>
+                        <comment>When clicked in the button in Intro, shows a dialog to open a file.</comment>
+                        <event-block sid="396967133983461">
+                            <conditions>
+                                <condition id="3" name="On C2 Function" sid="696408281625057" type="Intro" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="718519944908176">
+                                    <conditions>
+                                        <condition id="4" name="Compare C2 Function" sid="294209361178472" type="Intro">
+                                            <param id="0" name="C2">&quot;file&quot;</param>
+                                            <param id="1" name="Case">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="20" name="Show dialog" sid="213703318273414" type="Electron">
+                                            <param id="0" name="Title">&quot;Choose a web file to open&quot;</param>
+                                            <param id="1" name="Default path">&quot;&quot;</param>
+                                            <param id="2" name="Confirmation text (optional)">&quot;&quot;</param>
+                                            <param id="3" name="Filters (TODO)">&quot;&quot;</param>
+                                            <param id="4" name="Properties">&quot;openFile&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="466044765077942">
+                            <conditions>
+                                <condition id="8" name="On validate dialog" sid="496729111278480" type="Electron" />
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Read" sid="140734928744470" type="Electron">
+                                    <param id="0" name="Tag">&quot;file&quot;</param>
+                                    <param id="1" name="Path">Electron.ChosenPath</param>
+                                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="161682400722735" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="13" name="Go to URL" sid="589710452023260" type="HTMLIFrame">
+                                    <param id="0" name="URL">Electron.ChosenPath</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="919934218893037" title="Drag &amp; drop">
+                    <sub-events>
+                        <comment>On started dragging a item to the window, sets the drag to active.</comment>
+                        <event-block sid="852788413476554">
+                            <conditions>
+                                <condition id="16" name="OnDragEnter" sid="141194187336158" type="Electron" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="697311585615737" type="System">
+                                    <param id="0" name="Variable">drag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If the drag is active, sets a placeholder to the window.</comment>
+                        <event-block sid="330147881756369">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="373236001477121" type="System">
+                                    <param id="0" name="Variable">drag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="750210020737100" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Append HTML" sid="613707893832711" type="Intro">
+                                    <param id="0" name="Append HTML">&quot;&lt;div id=drag&gt;&lt;/div&gt;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>When stops dragging a item to the window, sets the drag to disabled.</comment>
+                        <event-block sid="231192771607808">
+                            <conditions>
+                                <condition id="17" name="OnDragLeave" sid="954087135310926" type="Electron" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="448719787079170" type="System">
+                                    <param id="0" name="Variable">drag</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If drag is disabled, removes the placeholder from the window.</comment>
+                        <event-block sid="957846378283978">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="617472195794831" type="System">
+                                    <param id="0" name="Variable">drag</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="632239349697825" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="25" name="Remove elements" sid="314997119978221" type="Intro">
+                                    <param id="0" name="ID/Class">&quot;#drag&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>When the file is dropped, sets the drag to disabled and starts reading the file.</comment>
+                        <event-block sid="851287407926985">
+                            <conditions>
+                                <condition id="7" name="On file dropped" sid="684265578416553" type="Electron" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="636558760189406" type="System">
+                                    <param id="0" name="Variable">drag</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="9" name="Read" sid="329533077522064" type="Electron">
+                                    <param id="0" name="Tag">&quot;file&quot;</param>
+                                    <param id="1" name="Path">Electron.DroppedFilePath</param>
+                                    <param id="2" name="Encoding">&quot;utf8&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="189956658686793" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="13" name="Go to URL" sid="781028457309497" type="HTMLIFrame">
+                                    <param id="0" name="URL">Electron.DroppedFilePath</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="600135382453991" title="Load">
+                    <sub-events>
+                        <comment>When loading the file.</comment>
+                        <event-block sid="943866014580264">
+                            <conditions>
+                                <condition id="10" name="On Go to URL" sid="525584600226630" type="HTMLIFrame" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <comment>When loaded the file, removes the Intro.</comment>
+                        <event-block sid="604741944496646">
+                            <conditions>
+                                <condition id="6" name="On Load" sid="538090752215466" type="HTMLIFrame" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set visible" sid="154801983495541" type="Intro">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>When gets a error on loading the file.</comment>
+                        <event-block sid="102212535604139">
+                            <conditions>
+                                <condition id="5" name="On Error" sid="220222235799819" type="HTMLIFrame" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="824025257074209" title="Keyboard shortcuts">
+            <sub-events>
+                <event-group description="" sid="375504112017961" title="F11">
+                    <sub-events>
+                        <event-block sid="882296913369720">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="977932840488015" type="Keyboard">
+                                    <param id="0" name="Key">122 (F11)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>If not in fullscreen, toggles fullscreen and marks it as enabled.</comment>
+                                <event-block sid="843227533985823">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="416414645351865" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Set Fullscreen" sid="436878735782130" type="Electron">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="902648727211345" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="759327808682977" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>If already in fullscreen, toggles fullscreen and marks it as disabled.</comment>
+                                <event-block sid="575660446171107">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="463568266126612" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Set Fullscreen" sid="422641923475099" type="Electron">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="977177541358689" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="493050727038118" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
