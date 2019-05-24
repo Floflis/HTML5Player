@@ -3,3 +3,7 @@ frame buttons (close, maximize, minimize, update, drag window, resize) (Framlr f
 ESC keyboard
 fullscreen message (FMWK)
 backdrop CSS filters
+windows/mac/android/ios/chromeos versions
+add to DApp Store
+if not on Floflis, set icon for HTML5
+tell about HTML5Apps Platform (through FMWK)
