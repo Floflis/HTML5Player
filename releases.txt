@@ -1,0 +1,5 @@
+1.0.0.4
+- Welcome screen
+- Read HTML file
+- Accept #html ID CSS styling
+- Fullscreen mode, with F11 keyboard shortcut

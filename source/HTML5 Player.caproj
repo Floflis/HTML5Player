@@ -2,10 +2,10 @@
 <c2project>
     <name>HTML5 Player</name>
     <description>Up-to-date HTML5 viewer. It is a idea from me to parody Shockwave Flash Player and his .SWF files, as a nostalgy of Flash but with the modernity of HTML5.</description>
-    <version>1.0.3.1</version>
-    <author></author>
-    <author-email></author-email>
-    <author-website>http://</author-website>
+    <version>1.0.0.4</version>
+    <author>Daniell Mesquita</author>
+    <author-email>daniellplasmmer@gmail.com</author-email>
+    <author-website>dat://ca41c105bc3c2810cdb8e437890acc276d1bbb7054df845c0153825c16459270/user/dat://c518187c62c2061573dce0ac0874c1eeec98a0fe12a32248fe93b5be7a0f009c</author-website>
     <app-id>com.html5appsplatform.html5player</app-id>
     <unique-id>2hbqjqulg5c6</unique-id>
     <saved-with-version>24400</saved-with-version>
