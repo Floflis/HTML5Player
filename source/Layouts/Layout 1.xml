@@ -29,16 +29,16 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="HTMLIFrame" uid="0">
+                <instance type="WebView" uid="0">
                     <properties>
-                        <id-optional></id-optional>
+                        <id-optional>html</id-optional>
                         <class-optional></class-optional>
                         <initial-visibility>Visible</initial-visibility>
                         <tooltip></tooltip>
                         <background>transparent</background>
                         <border></border>
                         <scroll>Auto</scroll>
-                        <object>iFrame</object>
+                        <object>HTML</object>
                         <iframe></iframe>
                         <url></url>
                         <html></html>
@@ -77,7 +77,7 @@
                         <iframe></iframe>
                         <url></url>
                         <html></html>
-                        <code>&lt;title&gt;HTML5 Player&lt;/title&gt;&lt;style&gt;#intro{top: 0px!important;left: 0px!important;position: absolute!important;width: calc(100% + 0px) !important;height: calc(100% + 0px) !important}body{background:#000;color:#fff}center{margin-top:5px}h1{font-size:2em}h4{font-size:1.3em}p{font-size:14px}copyright{font-size:12px}#drag{width: calc(100% + -8px);height: calc(100% + -8px);position: fixed;top: 0;border: 4px dotted #fff!important;background: rgba(255, 255, 255, 0.5)}&lt;/style&gt;&lt;center&gt;&lt;img width=&quot;100px&quot; src=&quot;logo.png&quot;&gt;&lt;h1&gt;&lt;span style=&quot;color:orange&quot;&gt;HTML5&lt;/span&gt; Player&lt;/h1&gt;&lt;h4&gt;To begin, choose a .HTML5 file or drag &amp;amp; drop it here.&lt;/h4&gt;&lt;button onclick=C2(&apos;file&apos;)&gt;Choose file...&lt;/button&gt;&lt;p&gt;&lt;b&gt;What is HTML5 Player?&lt;/b&gt; It is a idea from me to parody Shockwave Flash Player and his .SWF files, as a nostalgy of Flash but with the modernity of HTML5.&lt;/p&gt;&lt;p&gt;&lt;b&gt;What is a .HTML5 file?&lt;/b&gt; Is a single file containing all resources (base64 images, CSS, JS) inline (good for offline or slow connections) or pointing to online links. These files can host pages (for reading), utility applications, games and advanced animations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; It is a serious project, and with it you can open other web page files if you don&apos;t want openning a browser with lots of tabs just to read one file.&lt;/p&gt;&lt;footer&gt;&lt;copyright&gt;(c) 2017-2018 &lt;a href=&quot;https://plasmmer.github.io/&quot; target=&quot;blank&quot;&gt;&lt;small&gt;Plasmmer&lt;/small&gt;&lt;/a&gt;. Thanks to &lt;b&gt;Jesus&lt;/b&gt;, our Lord.&lt;/copyright&gt;&lt;/footer&gt;&lt;/center&gt;</code>
+                        <code>&lt;title&gt;HTML5 Player&lt;/title&gt;&lt;style&gt;#intro{top: 0px!important;left: 0px!important;position: absolute!important;width: calc(100% + 0px) !important;height: calc(100% + 0px) !important}body{background:#000;color:#fff}center{margin-top:5px}h1{font-size:2em}h4{font-size:1.3em}p{font-size:14px}copyright{font-size:12px}#drag{width: calc(100% + -8px);height: calc(100% + -8px);position: fixed;top: 0;border: 4px dotted #fff!important;background: rgba(255, 255, 255, 0.5)}&lt;/style&gt;&lt;center&gt;&lt;img width=&quot;100px&quot; src=&quot;logo.png&quot;&gt;&lt;h1&gt;&lt;span style=&quot;color:orange&quot;&gt;HTML5&lt;/span&gt; Player&lt;/h1&gt;&lt;h4&gt;To begin, choose a .HTML5 file or drag &amp;amp; drop it here.&lt;/h4&gt;&lt;button onclick=C2(&apos;file&apos;)&gt;Choose file...&lt;/button&gt;&lt;p&gt;&lt;b&gt;What is HTML5 Player?&lt;/b&gt; It is a idea from me to parody Shockwave Flash Player and his .SWF files, as a nostalgy of Flash but with the modernity of HTML5.&lt;/p&gt;&lt;p&gt;&lt;b&gt;What is a .HTML5 file?&lt;/b&gt; Is a single file containing all resources (base64 images, CSS, JS) inline (good for offline or slow connections) or pointing to online links. These files can host pages (for reading), utility applications, games and advanced animations.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Note:&lt;/b&gt; It is a serious project, and with it you can open other web page files if you don&apos;t want openning a browser with lots of tabs just to read one file.&lt;/p&gt;&lt;footer&gt;&lt;copyright&gt;(c) 2017-2019 &lt;a href=&quot;https://plasmmer.github.io/&quot; target=&quot;blank&quot;&gt;&lt;small&gt;Plasmmer&lt;/small&gt;&lt;/a&gt;. Thanks to &lt;b&gt;Jesus&lt;/b&gt;, our Lord.&lt;/copyright&gt;&lt;/footer&gt;&lt;/center&gt;</code>
                         <color></color>
                         <text-selectable>No</text-selectable>
                         <auto-font-size>No</auto-font-size>

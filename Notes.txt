@@ -1,1 +1,0 @@
-- Be the default browser and assign an favorite browser. When an link is openned, direct it to the favorite browser if it is openned

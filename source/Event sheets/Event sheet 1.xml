@@ -56,24 +56,22 @@
                             </conditions>
                             <actions>
                                 <action id="9" name="Read" sid="140734928744470" type="Electron">
-                                    <param id="0" name="Tag">&quot;file&quot;</param>
+                                    <param id="0" name="Tag">&quot;&quot;</param>
                                     <param id="1" name="Path">Electron.ChosenPath</param>
                                     <param id="2" name="Encoding">&quot;utf8&quot;</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="161682400722735" type="System">
-                                    <param id="0" name="Seconds">0.1</param>
-                                </action>
-                                <action id="13" name="Go to URL" sid="589710452023260" type="HTMLIFrame">
-                                    <param id="0" name="URL">Electron.ChosenPath</param>
+                                <action id="0" name="Request URL" sid="964201507522276" type="AJAX">
+                                    <param id="0" name="Tag">&quot;readhtml5&quot;</param>
+                                    <param id="1" name="URL">Electron.ChosenPath</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="919934218893037" title="Drag &amp; drop">
+                <event-group description="" disabled="1" sid="919934218893037" title="Drag &amp; drop">
                     <sub-events>
                         <comment>On started dragging a item to the window, sets the drag to active.</comment>
-                        <event-block sid="852788413476554">
+                        <event-block disabled="1" sid="852788413476554">
                             <conditions>
                                 <condition id="16" name="OnDragEnter" sid="141194187336158" type="Electron" />
                             </conditions>
@@ -85,7 +83,7 @@
                             </actions>
                         </event-block>
                         <comment>If the drag is active, sets a placeholder to the window.</comment>
-                        <event-block sid="330147881756369">
+                        <event-block disabled="1" sid="330147881756369">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="373236001477121" type="System">
                                     <param id="0" name="Variable">drag</param>
@@ -101,7 +99,7 @@
                             </actions>
                         </event-block>
                         <comment>When stops dragging a item to the window, sets the drag to disabled.</comment>
-                        <event-block sid="231192771607808">
+                        <event-block disabled="1" sid="231192771607808">
                             <conditions>
                                 <condition id="17" name="OnDragLeave" sid="954087135310926" type="Electron" />
                             </conditions>
@@ -113,7 +111,7 @@
                             </actions>
                         </event-block>
                         <comment>If drag is disabled, removes the placeholder from the window.</comment>
-                        <event-block sid="957846378283978">
+                        <event-block disabled="1" sid="957846378283978">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="617472195794831" type="System">
                                     <param id="0" name="Variable">drag</param>
@@ -129,7 +127,7 @@
                             </actions>
                         </event-block>
                         <comment>When the file is dropped, sets the drag to disabled and starts reading the file.</comment>
-                        <event-block sid="851287407926985">
+                        <event-block disabled="1" sid="851287407926985">
                             <conditions>
                                 <condition id="7" name="On file dropped" sid="684265578416553" type="Electron" />
                             </conditions>
@@ -146,7 +144,7 @@
                                 <action id="-16" name="Wait" sid="189956658686793" type="System">
                                     <param id="0" name="Seconds">0.1</param>
                                 </action>
-                                <action id="13" name="Go to URL" sid="781028457309497" type="HTMLIFrame">
+                                <action id="13" name="Go to URL" sid="781028457309497" type="WebView">
                                     <param id="0" name="URL">Electron.DroppedFilePath</param>
                                 </action>
                             </actions>
@@ -155,30 +153,22 @@
                 </event-group>
                 <event-group description="" sid="600135382453991" title="Load">
                     <sub-events>
-                        <comment>When loading the file.</comment>
-                        <event-block sid="943866014580264">
+                        <comment>Loads the .html5 file. When loaded the file, removes the Intro.</comment>
+                        <event-block sid="426385511409138">
                             <conditions>
-                                <condition id="10" name="On Go to URL" sid="525584600226630" type="HTMLIFrame" />
-                            </conditions>
-                            <actions />
-                        </event-block>
-                        <comment>When loaded the file, removes the Intro.</comment>
-                        <event-block sid="604741944496646">
-                            <conditions>
-                                <condition id="6" name="On Load" sid="538090752215466" type="HTMLIFrame" />
+                                <condition id="0" name="On completed" sid="224506232711615" type="AJAX">
+                                    <param id="0" name="Tag">&quot;readhtml5&quot;</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Set visible" sid="154801983495541" type="Intro">
+                                <action id="3" name="Focus" sid="968883892860442" type="Electron" />
+                                <action id="0" name="Set visible" sid="209487172302974" type="Intro">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
+                                <action id="6" name="Set HTML" sid="589710452023260" type="WebView">
+                                    <param id="0" name="Set HTML">AJAX.LastData</param>
+                                </action>
                             </actions>
-                        </event-block>
-                        <comment>When gets a error on loading the file.</comment>
-                        <event-block sid="102212535604139">
-                            <conditions>
-                                <condition id="5" name="On Error" sid="220222235799819" type="HTMLIFrame" />
-                            </conditions>
-                            <actions />
                         </event-block>
                     </sub-events>
                 </event-group>

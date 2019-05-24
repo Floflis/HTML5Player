@@ -6,10 +6,11 @@
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
-    <app-id>com.plasmmer.html5player</app-id>
+    <app-id>com.html5appsplatform.html5player</app-id>
     <unique-id>2hbqjqulg5c6</unique-id>
     <saved-with-version>24400</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="PlayLive" id="HTML_iFrame" version="1.419999957">HTML | iFrame</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Armaldio" id="armaldio_electron" version="1">Electron</plugin>
@@ -42,7 +43,7 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-type name="HTMLIFrame" sid="777105245828098">
+        <object-type name="WebView" sid="777105245828098">
             <plugin id="HTML_iFrame" />
         </object-type>
         <object-type name="Electron" sid="504879720613345">
@@ -53,6 +54,9 @@
         </object-type>
         <object-type name="Intro" sid="444123672814043">
             <plugin id="HTML_iFrame" />
+        </object-type>
+        <object-type name="AJAX" sid="459511664473369">
+            <plugin id="AJAX" />
         </object-type>
     </object-folder>
     <families />
@@ -65,6 +69,7 @@
     <global-instances>
         <global-instance type="Electron" uid="1" />
         <global-instance type="Keyboard" uid="2" />
+        <global-instance type="AJAX" uid="4" />
     </global-instances>
     <sounds-folder />
     <music-folder />

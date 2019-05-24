@@ -1,0 +1,12 @@
+Launch:
+- Welcome screen
+- Read HTML file
+- Accept #html ID CSS styling
+- Fullscreen mode, with F11 keyboard shortcut
+
+1.0.0.4
+
+Drag and drop (FMWK)
+frame buttons (close, maximize, minimize, update, drag window, resize) (Framlr for emulation)
+ESC keyboard
+fullscreen message (FMWK)

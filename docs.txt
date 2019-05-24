@@ -1,0 +1,2 @@
+use #html styling, working as body CSS
+example: #html{background:#fff!important;color:#000!important}
