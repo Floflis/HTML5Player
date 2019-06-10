@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Common</name>
+    <events>
+        <comment>Defines if fullscreen is active or else.</comment>
+        <variable constant="0" name="fullscreen" sid="170479304595264" static="0" type="number">0</variable>
+        <event-group description="" sid="912435679365451" title="Keyboard shortcuts">
+            <sub-events>
+                <event-group description="" sid="956250067479601" title="F11">
+                    <sub-events>
+                        <event-block sid="242220034403180">
+                            <conditions>
+                                <condition id="21" name="On shortcut" sid="727721553190642" type="Electron">
+                                    <param id="0" name="Tag">&quot;fullscreen&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>If not in fullscreen, toggles fullscreen and marks it as enabled.</comment>
+                                <event-block sid="935645393419629">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="669925907564638" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Set Fullscreen" sid="921362191256308" type="Electron">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="397132399097461" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="394149014152457" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>If already in fullscreen, toggles fullscreen and marks it as disabled.</comment>
+                                <event-block sid="967003033232661">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="650904553122340" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="8" name="Set Fullscreen" sid="711235959803270" type="Electron">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="591786457699273" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="830102692534134" type="System">
+                                            <param id="0" name="Variable">fullscreen</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="780116449566056" title="ESC">
+                    <sub-events>
+                        <event-block sid="505334570400495">
+                            <conditions>
+                                <condition id="21" name="On shortcut" sid="601653743675883" type="Electron">
+                                    <param id="0" name="Tag">&quot;close&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Exit" sid="765629610804937" type="Electron" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

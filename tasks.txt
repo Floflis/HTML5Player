@@ -1,9 +1,11 @@
 Site
 README.md
+docs
 
 Drag and drop (FMWK)
 frame buttons (close, maximize, minimize, update, drag window, resize) (Framlr for emulation)
 ESC keyboard
+register F11 shrtct
 fullscreen message (FMWK)
 backdrop CSS filters
 windows/mac/android/ios/chromeos versions

@@ -3,3 +3,10 @@
 - Read HTML file
 - Accept #html ID CSS styling
 - Fullscreen mode, with F11 keyboard shortcut
+
+1.0.0.9
+- Allows HTML5 files to use transparency
+- Focuses app window on start
+- Register F11 as Electron keyboard shortcut
+- ESC keyboard shortcut
+- Common events imported from Common sheet
