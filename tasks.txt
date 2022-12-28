@@ -1,3 +1,6 @@
+.apps release for https://archive.is/o/Smqjk/https://github.com/Floflis/HTML5Player/commit/213b9055cda609f26d933a3df3814e392256d771
+.apps release for https://archive.is/o/Smqjk/https://github.com/Floflis/HTML5Player/commit/beac233b74e0848b66105fd36e5bffc65340f5df (keep old .tar.gz file)
+
 Site
 README.md
 docs
